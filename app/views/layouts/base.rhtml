@@ -141,6 +141,7 @@ function submitMsg()
         });	
 //alert(text);
 }
+var autoScroll=true;
 function refreshChat()
 {
 	//var d = new Date();
@@ -155,7 +156,8 @@ function refreshChat()
     		//insertion:Insertion.Bottom,
     		frequency: 5,
     		decay: 1,
-		onSuccess: function(){window.setTimeout('refreshScroll()','50');}
+		onCreate: function(){if ($('chatMessages').scrollTop == $('chatMessages').scrollHeight) autoScroll=true;},
+		onSuccess: function(){if (!autoScroll) window.setTimeout('refreshScroll()','50');}
   	});
 //"<div class='chatMessage'><b>Josh</b> <span style='font-size: 10px;'>says</span> <div class='chatTime'>"+t+"</div><div>" + Message+"</div></div>";
 }
