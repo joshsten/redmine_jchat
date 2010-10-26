@@ -1,0 +1,20 @@
+<% @chats.reverse.each do |chat| %>
+<div class='chatMessage' title="<%= chat[:id] %>">
+<% @user = User.find(chat[:user]) %>
+<div style="float: left; display: inline-block; padding: 3px; border-bottom: thin solid #DDDDEE;"><%= avatar @user, :size => "20" %></div>
+
+<div style="float: left; width:105px; display: inline; border-bottom: thin dotted #DDDDEE;border-right: thin dotted #DDDDEE; height: 32px;"><b style="font-size: 14px;"><%= chat[:firstName] %></b> 
+<br/><span style='font-size: 10px;'>says</span> </div>
+
+<%
+	msgTime = chat[:sendDate]
+	#msgTime = Time.parse(chat[:sendDate])
+	msgTime=msgTime.strftime("%I:%M %p - %a %d/%d/%Y")
+%>
+
+<div onclick="location.href='/chat'"  class='chatTime'><%= msgTime %></div>
+<div style="clear:both; padding-top: 3px;"><%= chat[:message] %></div></div>
+<% end %>
+<!--<% User.all.each do |u| %>
+[<%= u.logged? %>]
+<% end %>-->

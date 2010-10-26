@@ -1,0 +1,49 @@
+<style>
+#footer {
+ position:fixed; 
+ text-align:center; 
+ bottom:0;
+ height:25px;
+ width:150px;
+ right:0; 
+ background-color:#CCCCCC;
+ cursor:pointer;
+} 
+#chatArea
+{
+ 	position:fixed; 
+ 	text-align:center; 
+ 	bottom:25px;;
+	right:0; 
+	height:195px;
+	width:300px;
+	background-color:#BCB1C7;
+	padding:2px;
+}
+</style>
+
+<script>
+var hidden= true;
+function expandChat()
+{
+	hidden = false;
+	$("chatArea").hide();
+}
+function collapseChat()
+{
+	hidden = true;
+	$("chatArea").show();
+}
+function toggleChat()
+{
+	if (hidden) 
+		expandChat();
+	else
+		collapseChat();
+}
+</script>
+<div id="footer" onclick="toggleChat();">Chat</div>
+<div id="chatArea">
+<div id="messages" style="height:150px; width:100%; border:thin solid #999999; text-align:left; padding:5px; background:#FEFEFE">Josh: hello</div>
+<input type="text" style="width:100%; padding:5px;" />
+</div>

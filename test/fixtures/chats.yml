@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  message: MyString
+  user: 1
+  sendDate: 2010-10-22 11:44:28
+two:
+  id: 2
+  message: MyString
+  user: 1
+  sendDate: 2010-10-22 11:44:28
