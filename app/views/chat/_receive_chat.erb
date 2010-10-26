@@ -3,7 +3,8 @@
 <% @user = User.find(chat[:user]) %>
 <div style="float: left; display: inline-block; padding: 3px; border-bottom: thin solid #DDDDEE;"><%= avatar @user, :size => "20" %></div>
 
-<div style="float: left; width:105px; display: inline; border-bottom: thin dotted #DDDDEE;border-right: thin dotted #DDDDEE; height: 32px;"><b style="font-size: 14px;"><%= chat[:firstName] %></b> 
+<div style="float: left; width:105px; display: inline; border-bottom: thin dotted #DDDDEE;border-right: thin dotted #DDDDEE; height: 32px; background-color: #F2F2F6;">
+<b style="font-size: 14px;"><%= chat[:firstName] %></b> 
 <br/><span style='font-size: 10px;'>says</span> </div>
 
 <%

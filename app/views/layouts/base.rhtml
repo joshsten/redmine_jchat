@@ -29,19 +29,21 @@
  text-align:center;
  bottom:0;
  height:15px;
- width:160px;
+ width:100px;
  right:0;
  valign: center;
  font-weight: bold;
  padding: 5px;
- background-color:#DDDDDD;
+ background-color:#E3E3E4;
  cursor:pointer;
  -moz-border-radius-topleft: 10px 10px;
  border-top-left-radius: 10px 10px;
+ color: #333;
 }
 #chatFooter:hover
 {
-	background-color: #FFFFFF;
+	background-color: #E9E9E9;
+	color: #666;
 }
 #chatArea
 {
@@ -51,8 +53,8 @@
         bottom:25px;
         right:0;
         height:440px;
-        width:400px;
-        background-color:#DEDDDE;
+        width:600px;
+        background-color: #EFEEF2;//#DEDDDE;
         padding:2px;
 }
 #chatMessages
@@ -64,6 +66,7 @@
 	text-align:left; 
 	padding:5px; 
 	background:#FEFEFE;
+	color: #332233;
 }
 #chatMessages:hover
 {
@@ -73,10 +76,11 @@
 {
 	padding: 10px;
 	border-top: solid thin #EEEEEE;
+	background: #FFF repeat-x bottom url('/plugin_assets/redmine_j_chat/images/purp_gradient.png');
 }
 .chatMessage:hover
 {
-	background-color: #EFEEEF;
+	background: #EFEEEF;
 }
 .chatTime
 {
@@ -232,6 +236,7 @@ function refreshScroll()
 <div id="chatArea">
 <div id="chatMessages" class="chatMessage" title="0">This is a work in progress <%= User.current.logged? %>, just ignore it for now.</div>
 <input type="text" id="txtMsg" style="width:100%; padding:5px; color: #220022;" />
+<!--<textarea id="txtMsg" style="width:100%; padding:5px; color: #220022;"></textarea>-->
 </div>
 
 
