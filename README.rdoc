@@ -1,3 +1,10 @@
 = j_chat
 
-Description goes here
+Run in the plugin folder:
+git clone git://github.com/joshsten/JChat.git
+
+Run in the main redmine folder:
+rake db:migrate_plugins RAILS_ENV=production
+
+The plugin should be installed.
+<img src="test.png">
