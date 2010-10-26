@@ -7,4 +7,4 @@ Run in the main redmine folder:
 rake db:migrate_plugins RAILS_ENV=production
 
 The plugin should be installed.
-<img src="test.png">
+This plugin hasn't been throughly tested on a clean install. Let me know if you encounter bugs.
