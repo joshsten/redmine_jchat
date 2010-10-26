@@ -56,6 +56,7 @@
         width:600px;
         background-color: #EFEEF2;//#DEDDDE;
         padding:2px;
+	
 }
 #chatMessages
 {
@@ -173,7 +174,7 @@ function refreshScroll()
 <% end %>
 
 </head>
-<body onload="$('chatArea').hide();"  class="<%= body_css_classes %>">
+<body class="<%= body_css_classes %>">
 <div id="wrapper">
 <div id="wrapper2">
 <div id="top-menu">
@@ -226,6 +227,8 @@ function refreshScroll()
 </div>
 </div>
 </div>
+
+<% if User.current.logged? %>
 <%= call_hook :view_layouts_base_body_bottom %>
 
 <%
@@ -233,7 +236,7 @@ function refreshScroll()
 %>
 
 <div id="chatFooter" onclick="toggleChat();">Chat (<%= numOnline %>) </div>
-<div id="chatArea">
+<div id="chatArea" style="display: none;">
 <div id="chatMessages" class="chatMessage" title="0">This is a work in progress <%= User.current.logged? %>, just ignore it for now.</div>
 <input type="text" id="txtMsg" style="width:100%; padding:5px; color: #220022;" />
 <!--<textarea id="txtMsg" style="width:100%; padding:5px; color: #220022;"></textarea>-->
@@ -241,5 +244,6 @@ function refreshScroll()
 
 
 <script>init();</script>
+<% end %>
 </body>
 </html>
