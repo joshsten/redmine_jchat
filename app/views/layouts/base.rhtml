@@ -21,204 +21,9 @@
 <!-- page specific tags -->
 <%= yield :header_tags -%>
 
-
 <% if User.current.logged? %>
-<style>
-#chatFooter {
- position:fixed;
- text-align:center;
- bottom:0;
- height:15px;
- width:100px;
- right:0;
- valign: center;
- font-weight: bold;
- padding: 5px;
- background-color:#E3E3E4;
- cursor:pointer;
- -moz-border-radius-topleft: 10px 10px;
- border-top-left-radius: 10px 10px;
- color: #333;
-}
-#chatFooter:hover
-{
-	background-color: #E9E9E9;
-	color: #666;
-}
-#chatArea
-{
-        position:fixed;
-        text-align:center;
-	color: #666666;
-        bottom:25px;
-        right:0;
-        height:440px;
-        width:600px;
-        background-color: #EFEEF2;//#DEDDDE;
-        padding:2px;
-	
-}
-#chatMessages
-{
-	overflow:auto; 
-	height:400px; 
-	width:97%; 
-	border:thin solid #999999; 
-	text-align:left; 
-	padding:5px; 
-	background:#FEFEFE;
-	color: #332233;
-}
-#chatMessages:hover
-{
-	background-color:#FBFBFB;
-}
-.chatMessage
-{
-	padding: 10px;
-	border-top: solid thin #EEEEEE;
-	background: #FFF repeat-x bottom url('/plugin_assets/redmine_j_chat/images/purp_gradient.png');
-}
-.chatMessage:hover
-{
-	background: #F4F4F7;
-}
-.chatTime
-{
-float:right; position: relative;
-font-weight = bold;
-color: #bcb191; //#ada280;
-border-bottom: thin solid #DDDDDD;
-cursor: pointer;
-}
-</style>
-
-<script language="javascript">
-var chatVisible= true;
-var latestId = 0;
-
-function setCookie(NameOfCookie, value, expiredays) 
-{
-
-// Three variables are used to set the new cookie. 
-// The name of the cookie, the value to be stored,
-// and finally the number of days until the cookie expires.
-// The first lines in the function convert 
-// the number of days to a valid date.
-
-var ExpireDate = new Date ();
-ExpireDate.setTime(ExpireDate.getTime() + (expiredays * 24 * 3600 * 1000));
-
-// The next line stores the cookie, simply by assigning 
-// the values to the "document.cookie" object.
-// Note the date is converted to Greenwich Mean time using
-// the "toGMTstring()" function.
-
-document.cookie = NameOfCookie + "=" + escape(value) + 
-((expiredays == null) ? "" : "; expires=" + ExpireDate.toGMTString());
-}
-function getCookie(NameOfCookie)
-{
-
-// First we check to see if there is a cookie stored.
-// Otherwise the length of document.cookie would be zero.
-
-if (document.cookie.length > 0) 
-{ 
-
-// Second we check to see if the cookie's name is stored in the
-// "document.cookie" object for the page.
-
-// Since more than one cookie can be set on a
-// single page it is possible that our cookie
-// is not present, even though the "document.cookie" object
-// is not just an empty text.
-// If our cookie name is not present the value -1 is stored
-// in the variable called "begin".
-
-begin = document.cookie.indexOf(NameOfCookie+"="); 
-if (begin != -1) // Note: != means "is not equal to"
-{ 
-
-// Our cookie was set. 
-// The value stored in the cookie is returned from the function.
-
-begin += NameOfCookie.length+1; 
-end = document.cookie.indexOf(";", begin);
-if (end == -1) end = document.cookie.length;
-return unescape(document.cookie.substring(begin, end)); } 
-}
-return null; 
-
-// Our cookie was not set. 
-// The value "null" is returned from the function.
-
-}
-
-function expandChat()
-{
-	setCookie('chatExpanded','0',21,'','','');
-        chatVisible = true;
-        $("chatArea").hide();
-}
-function collapseChat()
-{
-	setCookie('chatExpanded','1',21,'','','');
-        chatVisible = false;
-        $("chatArea").show();
-}
-function toggleChat()
-{
-        if (!chatVisible)  expandChat();
-        else   collapseChat();
-}
-
-function init()
-{
-	if (getCookie('chatExpanded') == '1') collapseChat();
-	refreshChat();
-	$('txtMsg').observe('keypress', function(event){
-    	var key = event.which || event.keyCode;
-    switch (key) {
-        default:
-        break;
-        case Event.KEY_RETURN:
-            submitMsg();
-        break;
-    }
-});
-
-}
-function submitMsg()
-{
-      text=$('txtMsg').value;
-      var myAjax = new Ajax.Request(
-      '/chat/send_chat',
-      {method: 'post', parameters: {msg: text}});
-	$('txtMsg').value="";
-	new Ajax.Updater('chatMessages', '/chat/receive_chat',
-        {
-                method: 'get',
-                onSuccess: function(){window.setTimeout('refreshScroll()','50');}
-        });	
-}
-var autoScroll=true;
-function refreshChat()
-{
-	new Ajax.PeriodicalUpdater('chatMessages', '/chat/receive_chat',
-  	{
-   	 	method: 'get',
-    		frequency: 5,
-    		decay: 1,
-		onCreate: function(){if ($('chatMessages').scrollTop == $('chatMessages').scrollHeight) autoScroll=true;},
-		onSuccess: function(){if (!autoScroll) window.setTimeout('refreshScroll()','50');}
-  	});
-}
-function refreshScroll()
-{
-	$('chatMessages').scrollTop = $('chatMessages').scrollHeight;
-}
-</script>
+	<%= stylesheet_link_tag 'main.css', :plugin => 'jchat' %>
+	<%= javascript_include_tag 'main.js', :plugin => 'jchat' %>
 <% end %>
 
 </head>
@@ -280,18 +85,18 @@ function refreshScroll()
 <%= call_hook :view_layouts_base_body_bottom %>
 
 <%
-	numOnline=""	
+  numOnline=0
 %>
 
-<div id="chatFooter" onclick="toggleChat();">Chat (<%= numOnline %>) </div>
+<div id="chatFooter" onclick="toggleChat();">Chat</div>
 <div id="chatArea" style="display: none;">
 <div id="chatMessages" class="chatMessage" title="0">This is a work in progress <%= User.current.logged? %>, just ignore it for now.</div>
-<input type="text" id="txtMsg" style="width:100%; padding:5px; color: #220022;" />
+<input type="text" id="txtMsg" class="chatInput" />
 <!--<textarea id="txtMsg" style="width:100%; padding:5px; color: #220022;"></textarea>-->
 </div>
 
-
 <script>init();</script>
 <% end %>
+
 </body>
 </html>

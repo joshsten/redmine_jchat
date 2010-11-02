@@ -1,0 +1,79 @@
+#chatFooter {
+ position:fixed;
+ text-align:center;
+ bottom:0;
+ height:15px;
+ width:100px;
+ right:0;
+ valign: center;
+ font-weight: bold;
+ padding: 5px;
+ background-color:#E3E3E4;
+ cursor:pointer;
+ -moz-border-radius-topleft: 10px 10px;
+ border-top-left-radius: 10px 10px;
+ color: #333;
+}
+#chatFooter:hover
+{
+        background-color: #E9E9E9;
+        color: #666;
+}
+#chatArea
+{
+        position:fixed;
+        text-align:center;
+        color: #666666;
+        bottom:25px;
+        right:0;
+        height:440px;
+        width:600px;
+        background-color: #EFEEF2;//#DEDDDE;
+        padding:2px;
+        z-index: 99;
+}
+#chatMessages
+{
+        overflow:auto;
+        height:400px;
+        width:97%;
+        border:thin solid #999999;
+        text-align:left;
+        padding:5px;
+        background:#FEFEFE;
+        color: #332233;
+}
+#chatMessages:hover
+{
+        background-color:#FBFBFB;
+}
+.chatMessage
+{
+        padding: 10px;
+        border-top: solid thin #EEEEEE;
+        background: #FFF repeat-x bottom url('/plugin_assets/JChat/images/purp_gradient.png');
+}
+.chatMessage:hover
+{
+        background: #F4F4F7;
+}
+.chatTime
+{
+float:right; position: relative;
+font-weight = bold;
+color: #bcb191; //#ada280;
+border-bottom: thin solid #DDDDDD;
+cursor: pointer;
+}
+.chatInput
+{
+        width:100%;
+        padding:5px;
+        color: #220022;
+        font-size: 16px;
+        height: 20px;
+}
+.chatInput:hover
+{
+        background-color: #FAF2FA;
+}

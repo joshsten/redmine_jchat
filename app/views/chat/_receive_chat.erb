@@ -1,21 +1,24 @@
-<% @chats.reverse.each do |chat| %>
-<div class='chatMessage' title="<%= chat[:id] %>">
-<% @user = User.find(chat[:user]) %>
-<div style="float: left; display: inline-block; padding: 3px; border-bottom: thin solid #DDDDEE;"><%= avatar @user, :size => "20" %></div>
-
-<div style="float: left; width:105px; display: inline; border-bottom: thin dotted #DDDDEE;border-right: thin dotted #DDDDEE; height: 32px; background-color: #F2F2F6;">
-<b style="font-size: 14px;"><%= chat[:firstName] %></b> 
-<br/><span style='font-size: 10px;'>says</span> </div>
-
-<%
-	msgTime = chat[:sendDate]
-	#msgTime = Time.parse(chat[:sendDate])
-	msgTime=msgTime.strftime("%I:%M %p - %a %d/%d/%Y")
+<% 
+thisUser=""
+@chats.reverse.each do |chat|
+msgTime = chat[:sendDate]
+msgTime=msgTime.strftime("%I:%M %p - %a %d/%m/%Y")
+@user = User.find(chat[:user])
+#if ! (thisUser==chat[:user]) then 
 %>
 
-<div onclick="location.href='/chat'"  class='chatTime'><%= msgTime %></div>
-<div style="clear:both; padding-top: 3px;"><%= chat[:message] %></div></div>
+<div class='chatMessage' title="<%= chat[:id] %>">
+
+<% if ! (thisUser==chat[:user]) then  %>
+	<div style="float: left; display: inline-block; padding: 3px; border-bottom: thin solid #DDDDEE;"><%= avatar @user, :size => "20" %></div>
+	<div style="float: left; width:105px; display: inline; border-bottom: thin dotted #DDDDEE;border-right: thin dotted #DDDDEE; height: 32px; background-color: #F2F2F6;">
+	<b style="font-size: 14px;"><%= chat[:firstName] %></b> 
+	<br/><span style='font-size: 10px;'>says</span> </div>
+	<div onclick="location.href='/chat'"  class='chatTime'><%= msgTime %></div>
 <% end %>
-<!--<% User.all.each do |u| %>
-[<%= u.logged? %>]
-<% end %>-->
+	<div style="clear: both; padding-top: 3px;"><%= chat[:message] %></div>
+</div>
+
+<% 
+thisUser=chat[:user]
+end %>
