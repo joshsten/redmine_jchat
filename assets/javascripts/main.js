@@ -109,17 +109,19 @@ function submitMsg()
 {
       text=$('txtMsg').value;
       if (text=="") return;
+	$('txtMsg').value="";
       var myAjax = new Ajax.Request(
       '/chat/send_chat',
-      {method: 'post', parameters: {msg: text}});
-        $('txtMsg').value="";
-        new Ajax.Updater('chatMessages', '/chat/receive_chat',
-        { method: 'post',  
-		onSuccess: function(){
-			scrollChatNewest();
-        		justSubmittedMessage=2;
-		}
-	});
+      {method: 'post', parameters: {msg: text},
+	onSuccess: function(){
+        	new Ajax.Updater('chatMessages', '/chat/receive_chat',
+        	{ method: 'post',  
+			onSuccess: function(){
+				scrollChatNewest();
+        			justSubmittedMessage=2;
+			}
+		});
+	}});
 }
 var preContent='0';
 function refreshChat()
