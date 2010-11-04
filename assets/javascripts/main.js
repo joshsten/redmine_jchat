@@ -1,7 +1,8 @@
 var chatVisible= true;
 var latestId = 0;
 var newMessage=0;
-var justSubmittedMessage=0;
+var justSubmittedMessage=1;
+var initializer=2;
 function setCookie(NameOfCookie, value, expiredays)
 {
 
@@ -121,16 +122,20 @@ var preContent='0';
 function refreshChat()
 {
         preContent='0';
-        new Ajax.PeriodicalUpdater('chatMessages', '/chat/receive_chat',
+	initializer=2;
+	new Ajax.PeriodicalUpdater('chatMessages', '/chat/receive_chat',
         {
                 method: 'post',
                 frequency: 5,
                 decay: 1,
                 onCreate: function(){$('ajax-indicator').style.visibility="hidden"; },
-                onSuccess: function(){$('ajax-indicator').style.visibility="visible"; 
-		if (preContent != $('chatMessages').innerHTML && preContent!='0' && justSubmittedMessage==0) {newMessage=1;flashMsg("New Message!");} 
+                onSuccess: function(){$('ajax-indicator').style.visibility="visible";
+		console.log("SubMsg: "+justSubmittedMessage); 
+		if (preContent != $('chatMessages').innerHTML && preContent!='0' && justSubmittedMessage==0 && initializer<=0) {newMessage=1;flashMsg("New Message!");} 
 		justSubmittedMessage=0;
-		preContent =  $('chatMessages').innerHTML; }
+		initializer--;
+		preContent =  $('chatMessages').innerHTML; 
+		console.log("PreCon: "+preContent);}
         });
 }
 
