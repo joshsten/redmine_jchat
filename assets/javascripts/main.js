@@ -1,6 +1,7 @@
 var chatVisible= true;
 var latestId = 0;
-
+var newMessage=0;
+var justSubmittedMessage=0;
 function setCookie(NameOfCookie, value, expiredays)
 {
 
@@ -81,7 +82,7 @@ function scrollChatNewest()
 {
 $('chatMessages').scrollTop = $('chatMessages').scrollHeight;
 }
-function init()
+function chat_init()
 {
         //if (getCookie('chatExpanded') == '1') collapseChat();
         refreshChat();
@@ -97,6 +98,11 @@ function init()
     }
 });
 
+	Event.observe('chatArea', 'mouseover', function(event) {
+    		newMessage=0;
+	});
+
+
 }
 function submitMsg()
 {
@@ -109,6 +115,7 @@ function submitMsg()
         new Ajax.Updater('chatMessages', '/chat/receive_chat',
         { method: 'post'  });
         scrollChatNewest();
+	justSubmittedMessage=1;
 }
 var preContent='0';
 function refreshChat()
@@ -120,29 +127,33 @@ function refreshChat()
                 frequency: 5,
                 decay: 1,
                 onCreate: function(){$('ajax-indicator').style.visibility="hidden"; },
-                onSuccess: function(){$('ajax-indicator').style.visibility="visible"; if (preContent != $('chatMessages').innerHTML && preContent!='0') ; preContent =  $('chatMessages').innerHTML; }
+                onSuccess: function(){$('ajax-indicator').style.visibility="visible"; 
+		if (preContent != $('chatMessages').innerHTML && preContent!='0' && justSubmittedMessage==0) {newMessage=1;flashMsg("New Message!");} 
+		justSubmittedMessage=0;
+		preContent =  $('chatMessages').innerHTML; }
         });
 }
+
+// When a new message comes in we want the chat area to flash "New message" as well as the window title bar.
+// this should occur until we get a hover even that fires on the 
 
 (function () {
 
 var original = document.title;
 var timeout;
 
-window.flashTitle = function (newMsg, howManyTimes) {
+window.flashMsg = function (newMsg) {
     function step() {
         document.title = (document.title == original) ? newMsg : original;
-
-        if (--howManyTimes > 0) {
+	$('chatFooter').innerHTML = ($('chatFooter').innerHTML == "Chat") ? newMsg : "Chat";
+        if (newMessage==1) {
             timeout = setTimeout(step, 1000);
-        };
+        }else{
+		$('chatFooter').innerHTML = "Chat";
+		document.title = original;
+	};
     };
 
-    howManyTimes = parseInt(howManyTimes);
-
-    if (isNaN(howManyTimes)) {
-        howManyTimes = 5;
-    };
 
     clearTimeout(timeout);
 
