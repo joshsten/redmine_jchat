@@ -114,9 +114,12 @@ function submitMsg()
       {method: 'post', parameters: {msg: text}});
         $('txtMsg').value="";
         new Ajax.Updater('chatMessages', '/chat/receive_chat',
-        { method: 'post'  });
-        scrollChatNewest();
-	justSubmittedMessage=1;
+        { method: 'post',  
+		onSuccess: function(){
+			scrollChatNewest();
+        		justSubmittedMessage=2;
+		}
+	});
 }
 var preContent='0';
 function refreshChat()
@@ -130,12 +133,10 @@ function refreshChat()
                 decay: 1,
                 onCreate: function(){$('ajax-indicator').style.visibility="hidden"; },
                 onSuccess: function(){$('ajax-indicator').style.visibility="visible";
-		console.log("SubMsg: "+justSubmittedMessage); 
-		if (preContent != $('chatMessages').innerHTML && preContent!='0' && justSubmittedMessage==0 && initializer<=0) {newMessage=1;flashMsg("New Message!");} 
-		justSubmittedMessage=0;
+		if (preContent != $('chatMessages').innerHTML && preContent!='0' && justSubmittedMessage<=0 && initializer<=0) {newMessage=1;flashMsg("New Message!");} 
+		justSubmittedMessage--;
 		initializer--;
-		preContent =  $('chatMessages').innerHTML; 
-		console.log("PreCon: "+preContent);}
+		preContent =  $('chatMessages').innerHTML;} 
         });
 }
 
