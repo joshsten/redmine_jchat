@@ -1,5 +1,5 @@
 <h2>Chat Transcripts</h2>
 <% @chats.each do |chat| %>
-<div class='chatMessage' title="<%= chat[:id] %>"><b><%= chat[:firstName] %></b> <span style='font-size: 10px;'>says</span> <div class='chatTime'><%= chat[:sendDate] %></div>
+<div class='chatMessage' title="<%= chat[:id] %>"><b><%= chat[:firstName] %></b> <span style='font-size: 10px;'>says</span> <div class='chatTime'><%= chat[:created_at] %></div>
 <div><%= chat[:message] %></div></div>
 <% end %>

@@ -1,7 +1,7 @@
 <% 
 thisUser=""
 @chats.reverse.each do |chat|
-msgTime = chat[:sendDate]
+msgTime = chat[:created_at]
 msgTime=msgTime.strftime("%I:%M %p - %a %d/%m/%Y")
 @user = User.find(chat[:user])
 #if ! (thisUser==chat[:user]) then 
