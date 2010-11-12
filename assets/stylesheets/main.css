@@ -36,7 +36,7 @@
 {
         overflow:auto;
         height:400px;
-        width:97%;
+        width:590px;
         border:thin solid #999999;
         text-align:left;
         padding:5px;
@@ -51,7 +51,7 @@
 {
         padding: 10px;
         border-top: solid thin #EEEEEE;
-        background: #FFF repeat-x bottom url('/plugin_assets/JChat/images/purp_gradient.png');
+        background: #FFF repeat-x bottom url('/plugin_assets/redmine_jchat/images/purp_gradient.png');
 }
 .chatMessage:hover
 {
@@ -67,7 +67,7 @@ cursor: pointer;
 }
 .chatInput
 {
-        width:100%;
+        width:99%;
         padding:5px;
         color: #220022;
         font-size: 16px;
