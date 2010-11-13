@@ -1,0 +1,17 @@
+<% if User.current.logged? %>
+	<%= stylesheet_link_tag 'main.css', :plugin => 'redmine_jchat' %>
+	<%= javascript_include_tag 'main.js', :plugin => 'redmine_jchat' %>
+<% end %>
+
+<% if User.current.logged? %>
+
+<div id="chatFooter" onclick="toggleChat();">Chat</div>
+<div id="chatArea" style="display: none;">
+<div id="chatMessages" class="chatMessage" title="0">This is a work in progress <%= User.current.logged? %>, just ignore it for now.</div>
+<input type="text" id="txtMsg" class="chatInput" />
+<!--<textarea id="txtMsg" style="width:100%; padding:5px; color: #220022;"></textarea>-->
+</div>
+
+<script>chat_init();</script>
+<% end %>
+
