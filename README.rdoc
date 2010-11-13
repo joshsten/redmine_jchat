@@ -1,4 +1,4 @@
-= j_chat
+= redmine_jchat
 
 Run in the plugin folder:
 git clone git://github.com/joshsten/JChat.git
@@ -12,4 +12,12 @@ This plugin hasn't been throughly tested on a clean install. Let me know if you 
 I plan on changing the textbox to a text area at some point.
 If you poke around the code an informed person would tell me the javascript and css needs to go into their own files. I agree. I plan on doing this when I get around to it.
 
-A minor annoyance is the loading ajax pops for about half a second every time a refresh is requested on a clean redmine install. I think I can disable this as I believe the timetracker plugin does something similiar. 
+I plan on adding:
+Group,project, and role options in a configuration panel
+Option to Display messages from self as from Me (when from you)
+Option to set poll frequencies and optional decay multiplier (if no new messages are received increase time between this poll and next poll)
+Option to highlight messages that are from one's self
+
+
+Fixes needed:
+The auto scrolling with new messages is a little off
