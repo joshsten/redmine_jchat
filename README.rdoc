@@ -13,11 +13,16 @@ I plan on changing the textbox to a text area at some point.
 If you poke around the code an informed person would tell me the javascript and css needs to go into their own files. I agree. I plan on doing this when I get around to it.
 
 I plan on adding:
-	Group,project, and role options in a configuration panel
+	Group,project, and role access control options in a configuration panel
 	Option to Display messages from self as from Me (when from you)
 	Option to set poll frequencies and optional decay multiplier (if no new messages are received increase time between this poll and next poll)
 	Option to highlight messages that are from one's self
-	Option to set how many recent messsages are displayed.
+	Option to set how many recent messages are displayed.
 
 Fixes needed:
-The auto scrolling with new messages is a little off
+        The auto scrolling with new messages is a little off
+
+I plan on reworking the entire Javascript implementation to be more efficient and to address some of the automatic scrolling issues.
+
+Turning on Query Caching may significantly improve efficiency.
+I will try to get most of these features completed within next couple weeks.
