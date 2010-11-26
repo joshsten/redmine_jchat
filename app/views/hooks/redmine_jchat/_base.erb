@@ -5,11 +5,10 @@
 
 <% if User.current.logged? %>
 
-<div id="chatFooter" onclick="toggleChat();">Chat</div>
+<div id="chatFooter" onclick="toggleChat();"><%= l(:label_chat_toggle_button) %></div>
 <div id="chatArea" style="display: none;">
-<div id="chatMessages" class="chatMessage" title="0">This is a work in progress <%= User.current.logged? %>, just ignore it for now.</div>
+<div id="chatMessages" class="chatMessage" title="0">.</div>
 <input type="text" id="txtMsg" class="chatInput" />
-<!--<textarea id="txtMsg" style="width:100%; padding:5px; color: #220022;"></textarea>-->
 </div>
 
 <script>chat_init();</script>

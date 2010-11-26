@@ -1,3 +1,10 @@
 # English strings go here for Rails i18n
 en:
-  my_label: "My label"
+  label_setting_messages_from_self_as_self: 'Show "Me" in the chatframe for messages from you.'
+  label_setting_color_messages_from_self: '<span style="color: 660066; background-color: #FAEEFA">Color</span> messages a special tint that are from you.'
+  label_setting_show_full_names: 'Show full names in the chat frame.'
+  label_setting_num_recent_messages: 'The number of recent messages to keep in the chat frame'
+  label_setting_poll_frequency:  'The polling frequency of the plugin.'
+  label_chat_says: 'says'
+  label_transcript_header: 'Chat Transcripts'
+  label_chat_toggle_button: 'Chat'
