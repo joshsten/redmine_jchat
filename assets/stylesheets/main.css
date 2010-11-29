@@ -53,6 +53,16 @@
         border-top: solid thin #EEEEEE;
         background: #FFF repeat-x bottom url('/plugin_assets/redmine_jchat/images/purp_gradient.png');
 }
+.chatMessageTinted
+{
+        padding: 10px;
+        border-top: solid thin #FFEEFF;
+        background: #FFF repeat-x bottom url('/plugin_assets/redmine_jchat/images/orange_gradient.png');
+}
+.chatMessageTinted:hover
+{
+	background: #FFF;
+}
 .chatMessage:hover
 {
         background: #F4F4F7;
@@ -76,4 +86,14 @@ cursor: pointer;
 .chatInput:hover
 {
         background-color: #FAF2FA;
+}
+.jchat-setting-entry
+{
+        clear: left;
+        height: 22px;
+        width: 450px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-bottom: #EEE thin solid;
+        color: #585558;
 }

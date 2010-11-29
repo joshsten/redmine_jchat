@@ -1,35 +1,24 @@
-<style>
-.jchat-setting-entry
-{
-	clear: left;
-	height: 22px;
-	width: 450px;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	border-bottom: #EEE thin solid;
-	color: #585558;
-}
-</style>
-
+<em><%= l(:label_settings_header) %></em>
+<br/>
 <div style="height:150px">
 <div class="jchat-setting-entry">
 	<div style="width: 400px;float: left;"><%= l(:label_setting_messages_from_self_as_self) %></div>
-	<div style="float: left;"><input type="checkbox"/></div>	
+	<div style="float: left;"><input type="checkbox" disabled="true"/></div>	
 </div>
 <div class="jchat-setting-entry">
 	<div style="width: 400px;float: left;"><%= l(:label_setting_color_messages_from_self) %></div>
-	<div style="float: left;"><input type="checkbox"/></div>
+	<div style="float: left;"><input type="checkbox" disabled="true" /></div>
 </div>
 <div class="jchat-setting-entry">
         <div style="width: 400px;float: left;"><%= l(:label_setting_show_full_names) %></div>
-        <div style="float: left;"><input type="checkbox"/></div>
+        <div style="float: left;"><input type="checkbox" disabled="true" /></div>
 </div>
 <div class="jchat-setting-entry">
         <div style="width: 400px;float: left;"><%= l(:label_setting_num_recent_messages) %></div>
-        <div style="float: left;"><input type="textbox" size="3" maxlength="3" /></div>
+        <div style="float: left;"><input type="textbox" size="3" maxlength="3" disabled="true" /></div>
 </div>
 <div class="jchat-setting-entry">
         <div style="width: 400px;float: left;"><%= l(:label_setting_poll_frequency)  %></div>
-        <div style="float: left;"><input type="textbox" size="3" maxlength="3" /></div>
+        <div style="float: left;"><input type="textbox" size="3" maxlength="3" disabled="true" /></div>
 </div>
 </div>

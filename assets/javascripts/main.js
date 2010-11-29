@@ -135,7 +135,7 @@ function refreshChat()
                 decay: 1,
                 onCreate: function(){$('ajax-indicator').style.visibility="hidden"; },
                 onSuccess: function(){$('ajax-indicator').style.visibility="visible";
-		if (preContent != $('chatMessages').innerHTML && preContent!='0' && justSubmittedMessage<=0 && initializer<=0) {newMessage=1;flashMsg("New Message!");} 
+		//if (preContent != $('chatMessages').innerHTML && preContent!='0' && justSubmittedMessage<=0 && initializer<=0) {newMessage=1;flashMsg("New Message!");} 
 		justSubmittedMessage--;
 		initializer--;
 		preContent =  $('chatMessages').innerHTML;} 
