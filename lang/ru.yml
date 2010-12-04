@@ -1,0 +1,13 @@
+  label_setting_messages_from_self_as_self: 'Показывать "Я" в окне чата возле ваших сообщений.' 
+  label_setting_color_messages_from_self: 'Окрашивать ваши сообщения в отдельный цвет.'
+  label_setting_show_full_names: 'Показывать полные имена в окне чата.'
+  label_setting_num_recent_messages: 'Число последних сообщений.'
+  label_setting_poll_frequency:  'Частота опроса модуля.'
+  label_settings_header: 'Внимание! Некоторые из опций могут быть отключены, т.к. еще могут быть не реализованы.'
+  
+  label_chat_self: 'Я'
+  label_chat_says: 'сказал'
+
+  label_transcript_header: 'Стенограммы'
+  
+  label_chat_toggle_button: 'Общий чат'
