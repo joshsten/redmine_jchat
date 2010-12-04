@@ -1,7 +1,7 @@
 # English strings go here for Rails i18n
 ru:
   # These are the captions for the setting dialog.
- label_setting_messages_from_self_as_self: 'Показывать "Я" в окне чата возле ваших сообщений.' 
+  label_setting_messages_from_self_as_self: 'Показывать "Я" в окне чата возле ваших сообщений.' 
   label_setting_color_messages_from_self: 'Окрашивать ваши сообщения в отдельный цвет.'
   label_setting_show_full_names: 'Показывать полные имена в окне чата.'
   label_setting_num_recent_messages: 'Число последних сообщений.'
