@@ -18,11 +18,15 @@ I plan on adding:
 	Option to set poll frequencies and optional decay multiplier (if no new messages are received increase time between this poll and next poll)
 	Option to highlight messages that are from one's self
 	Option to set how many recent messages are displayed.
-
-Fixes needed:
-        The auto scrolling with new messages is a little off
-
-I plan on reworking the entire Javascript implementation to be more efficient and to address some of the automatic scrolling issues.
+	Option to enable/disable Global chat, and turn on Project specific and/or Group Specific rooms
+	A new implementation of the Javascript with a flashing notification (titlebar, chat button) with new messages, and intelligent auto scroller when new messages come in for the chat frame.
+        
+I plan on reworking the entire Javascript implementation to be more efficient and to address some of the automatic scrolling issues when they were applied.
 
 Turning on Query Caching may significantly improve efficiency.
 I will try to get most of these features completed within next couple weeks.
+
+German Localization Provided by cforce (https://github.com/cforce)
+Russian Localization Provided by Garfeild (https://github.com/Garfeild)
+
+I would like to thank all of you who have reported issues and bugs, and to apologize for my slow development. I hope I can commit much more time during winter break.
