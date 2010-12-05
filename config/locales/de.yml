@@ -1,0 +1,18 @@
+de:
+  # These are the captions for the setting dialog. 
+  label_setting_messages_from_self_as_self: 'Eigene Nachrichten mit dem Label "Ich" anzeigen.' 
+  label_setting_color_messages_from_self: 'Eigene Nachrichten in Farbe anzeigen.' 
+  label_setting_show_full_names: 'Zeige den vollstaendigen Namen im Chat an.' 
+  label_setting_num_recent_messages: 'Anzahl der zuletzt geschriebenen Nachrichten, welche im Chat angezeigt werden sollen.' 
+  label_setting_poll_frequency: 'Polling Frequenz des Plugins.' 
+  label_settings_header: 'Diese Einstellungen sind Platzhalter für zukünftige Funktionen, die bisher noch nicht oder nicht vollständig implementiert sind.'
+
+  # These captions are displayed in the name panel for each chat message. label_chat_self is only used if the option the first label describes is checked. 
+  label_chat_self: 'Du' 
+  label_chat_says: 'sagt'
+
+  # Header displayed on the transcript page when a date is clicked in the chat frame. 
+  label_transcript_header: 'Chat Protokoll'
+
+  # Main chat button caption. 
+  label_chat_toggle_button: 'Chat'
