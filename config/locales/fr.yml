@@ -1,0 +1,19 @@
+# English strings go here for Rails i18n
+fr:
+  # These are the captions for the setting dialog.
+  label_setting_messages_from_self_as_self: 'Montrer "Moi" dans la fenêtre de tchat pour les messages provenant de vous.'
+  label_setting_color_messages_from_self: 'Colorier les messages personnels avec une teinte spéciale.'
+  label_setting_show_full_names: 'Montrer les noms complets dans la fenêtre de tchat.'
+  label_setting_num_recent_messages: 'Le nombre de messages récents à garder dans la fenêtre de tchat'
+  label_setting_poll_frequency:  'La fréquence d''interrogation du plugin.'
+  label_settings_header: 'S''il vous plait notez que certaines de ces options peuvent être des bouts pour les futures fonctionnalités et peut être désactivées si elles ne sont  pas encore mis en implémentées.'
+  
+  # These captions are displayed in the name panel for each chat message. label_chat_self is only used if the option the first label describes  is checked. 
+  label_chat_self: 'Vous'
+  label_chat_says: 'dit'
+
+  # Header displayed on the transcript page when a date is clicked in the chat frame.
+  label_transcript_header: 'Transcriptions tchat'
+  
+  # Main chat button caption.
+  label_chat_toggle_button: 'Tchat'

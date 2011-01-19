@@ -28,5 +28,6 @@ I will try to get most of these features completed within next couple weeks.
 
 German Localization Provided by cforce (https://github.com/cforce)
 Russian Localization Provided by Garfeild (https://github.com/Garfeild)
+French Localization Provided by passaid (https://github.com/paissad)
 
 I would like to thank all of you who have reported issues and bugs, and to apologize for my slow development. I hope I can commit much more time during winter break.
