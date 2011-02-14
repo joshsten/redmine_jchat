@@ -1,0 +1,19 @@
+# English strings go here for Rails i18n
+pt-BR:
+  # These are the captions for the setting dialog.
+  label_setting_messages_from_self_as_self: 'Exibir "Me" no quadro de bate-papo quando as mensagens vem de você.'
+  label_setting_color_messages_from_self: 'Mensagens de cor especial quando vem de você.'
+  label_setting_show_full_names: 'Exibir nome completo no quadro de bate-papo.'
+  label_setting_num_recent_messages: 'O número de mensagens recentes para manter no quadro de bate-papo'
+  label_setting_poll_frequency:  'A frequência de polling deste plugin.'
+  label_settings_header: 'Por favor, note que algumas destas opções podem ser stubs para funcionalidades futuras e pode ser desativado se ainda não implementado.'
+  
+  # These captions are displayed in the name panel for each chat message. label_chat_self is only used if the option the first label describes  is checked. 
+  label_chat_self: 'Você'
+  label_chat_says: 'disse'
+
+  # Header displayed on the transcript page when a date is clicked in the chat frame.
+  label_transcript_header: 'Transcrições de bate-papo'
+  
+  # Main chat button caption.
+  label_chat_toggle_button: 'Bate-papo'
