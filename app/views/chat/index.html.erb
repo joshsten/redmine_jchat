@@ -1,5 +1,5 @@
 <h2><%= l(:label_transcript_header) %></h2>
 <% @chats.each do |chat| %>
 <div class='chatMessage' title="<%= chat[:id] %>"><b><%= chat[:firstName] %></b> <span style='font-size: 10px;'><%= l(:label_chat_says)  %></span> <div class='chatTime'><%= chat[:created_at] %></div>
-<div><%= chat[:message] %></div></div>
+<div><%= chat[:message].gsub('<script>','&#60;script&#62;').gsub('</script>','&#60;&#47;script&#62;') %></div></div>
 <% end %>
