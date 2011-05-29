@@ -10,6 +10,7 @@ msgTime=msgTime.strftime("%I:%M %p - %a %d/%m/%Y")
 flagFullName = false
 flagTintMessages = false
 flagShowSelfName = false
+
 if @me[:firstname] == chat[:firstName] and @me[:lastname] == chat[:lastName] then
 	if flagShowSelfName      
         	displayName = '<span style="color: #000066">' + l(:label_chat_self) + '</span>'
