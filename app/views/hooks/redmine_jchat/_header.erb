@@ -1,5 +1,4 @@
 <% if User.current.logged? %>
-        <%= javascript_tag("var redmineRootPath = \"#{Redmine::Utils.relative_url_root}\"") %>
-	<%= stylesheet_link_tag 'main.css', :plugin => 'redmine_jchat' %>
+        <%= stylesheet_link_tag 'main.css', :plugin => 'redmine_jchat' %>
         <%= javascript_include_tag 'main.js', :plugin => 'redmine_jchat' %>
 <% end %>
