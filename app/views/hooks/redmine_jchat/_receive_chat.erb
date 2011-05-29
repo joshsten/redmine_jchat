@@ -1,0 +1,50 @@
+<% 
+thisUser=""
+@chats.reverse.each do |chat|
+
+msgTime = chat[:created_at]
+msgTime=msgTime.strftime("%I:%M %p - %a %d/%m/%Y")
+@user = User.find(chat[:user])
+@me = User.current 
+
+flagFullName = false
+flagTintMessages = false
+flagShowSelfName = false
+if @me[:firstname] == chat[:firstName] and @me[:lastname] == chat[:lastName] then
+	if flagShowSelfName      
+        	displayName = '<span style="color: #000066">' + l(:label_chat_self) + '</span>'
+	else	
+        	displayName = '<span style="color: #000066">' + chat[:firstName] + '</span>'
+	end
+else
+	if flagFullName then
+		displayName = chat[:firstName] + " " + chat[:lastName]	
+	else
+		displayName = chat[:firstName]
+	end
+end
+
+if @me[:firstname] == chat[:firstName] and @me[:lastname] == chat[:lastName] and flagTintMessages then 
+	chatClass='chatMessageTinted'
+else
+	chatClass='chatMessage'
+end
+%>
+
+<div class='<%= chatClass %>' title="<%= chat[:id] %>">
+
+
+
+<% if ! (thisUser==chat[:user]) then  %>
+	<div style="float: left; display: inline-block; padding: 3px; border-bottom: thin solid #DDDDEE;"><%= avatar @user, :size => "20" %></div>
+	<div style="float: left; width:105px; display: inline; border-bottom: thin dotted #DDDDEE;border-right: thin dotted #DDDDEE; height: 32px; background-color: #F2F2F6;">
+	<b style="font-size: 14px;"><%= displayName %></b> 
+	<br/><span style='font-size: 10px;'><%= l(:label_chat_says)  %></span> </div>
+	<div onclick="location.href='/chat'"  class='chatTime'><%= msgTime %></div>
+<% end %>
+	<div style="clear: both; padding-top: 3px;"><%= chat[:message] %></div>
+</div>
+
+<% 
+thisUser=chat[:user]
+end %>
