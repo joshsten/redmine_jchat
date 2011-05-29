@@ -40,7 +40,7 @@ end
 	<div style="float: left; width:105px; display: inline; border-bottom: thin dotted #DDDDEE;border-right: thin dotted #DDDDEE; height: 32px; background-color: #F2F2F6;">
 	<b style="font-size: 14px;"><%= displayName %></b> 
 	<br/><span style='font-size: 10px;'><%= l(:label_chat_says)  %></span> </div>
-	<div onclick="location.href='/chat'"  class='chatTime'><%= msgTime %></div>
+	<div onclick="location.href='<%= Redmine::Utils.relative_url_root %>/chat'"  class='chatTime'><%= msgTime %></div>
 <% end %>
 	<div style="clear: both; padding-top: 3px;"><%= chat[:message] %></div>
 </div>
