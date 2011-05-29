@@ -111,10 +111,10 @@ function submitMsg()
       if (text=="") return;
 	$('txtMsg').value="";
       var myAjax = new Ajax.Request(
-      '/chat/send_chat',
+      redmineRootPath + '/chat/send_chat',
       {method: 'post', parameters: {msg: text},
 	onSuccess: function(){
-        	new Ajax.Updater('chatMessages', '/chat/receive_chat',
+        	new Ajax.Updater('chatMessages', redmineRootPath + '/chat/receive_chat',
         	{ method: 'post',  
 			onSuccess: function(){
 				scrollChatNewest();
@@ -128,7 +128,7 @@ function refreshChat()
 {
         preContent='0';
 	initializer=2;
-	new Ajax.PeriodicalUpdater('chatMessages', '/chat/receive_chat',
+	new Ajax.PeriodicalUpdater('chatMessages', redmineRootPath+'/chat/receive_chat',
         {
                 method: 'post',
                 frequency: 5,
