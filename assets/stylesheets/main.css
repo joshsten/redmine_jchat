@@ -51,13 +51,13 @@
 {
         padding: 10px;
         border-top: solid thin #EEEEEE;
-        background: #FFF repeat-x bottom url('/plugin_assets/redmine_jchat/images/purp_gradient.png');
+        background: #FFF repeat-x bottom url('../images/purp_gradient.png');
 }
 .chatMessageTinted
 {
         padding: 10px;
         border-top: solid thin #FFEEFF;
-        background: #FFF repeat-x bottom url('/plugin_assets/redmine_jchat/images/orange_gradient.png');
+        background: #FFF repeat-x bottom url('../images/orange_gradient.png');
 }
 .chatMessageTinted:hover
 {

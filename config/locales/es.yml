@@ -1,0 +1,18 @@
+es:
+  # These are the captions for the setting dialog.
+  label_setting_messages_from_self_as_self: 'Mostrar "Yo" en el chat cuando el mensaje es propio.'
+  label_setting_color_messages_from_self: 'Colorear mensajes en otro color cuando son propios.'
+  label_setting_show_full_names: 'Mostrar nombre completo en la ventana de chat.'
+  label_setting_num_recent_messages: 'Numero de mensajes recientes en la ventana de chat'
+  label_setting_poll_frequency:  'Frecuencia de actualizacion de la ventana.'
+  label_settings_header: 'Algunas funciones pueden no estar disponible.'
+  
+  # These captions are displayed in the name panel for each chat message. label_chat_self is only used if the option the first label describes  is checked. 
+  label_chat_self: 'Usted'
+  label_chat_says: 'dijó'
+
+  # Header displayed on the transcript page when a date is clicked in the chat frame.
+  label_transcript_header: 'Transcripciones'
+  
+  # Main chat button caption.
+  label_chat_toggle_button: 'Chat'
